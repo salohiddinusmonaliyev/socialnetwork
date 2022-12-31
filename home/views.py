@@ -9,6 +9,7 @@ class HomeView(View):
         data = {
             "post": Post.objects.all(),
             "user": request.user,
+            "all_user": CustomUser.objects.all,
         }
         return render(request, "index.html", data)
 
