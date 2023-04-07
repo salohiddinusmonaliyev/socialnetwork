@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<!-- Mirrored from uitheme.net/sociala/default-member.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 15 Aug 2022 05:59:22 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sociala - Social Network App HTML Template </title>
+
+    <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/feather.css' %}">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon.png' %}">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'semantic/semantic.min.css' %}">
+
+</head>
+
+<body class="color-theme-blue mont-font">
+
+    <div class="preloader"></div>
+
+    
+    <div class="main-wrapper">
+
+        <!-- navigation top-->
+        <div class="nav-header bg-white shadow-xs border-0">
+            
+            <form action="#" class="float-left header-search">
+                <div class="form-group mb-0 icon-input">
+                    <i class="feather-search font-sm text-grey-400"></i>
+                    <input type="text" placeholder="Start typing to search.." class="bg-grey border-0 lh-32 pt-2 pb-2 ps-5 pe-3 font-xssss fw-500 rounded-xl w350 theme-dark-bg">
+                </div>
+            </form>
+            <a href="#" class="p-2 text-center ms-auto menu-icon" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-bs-toggle="dropdown"></a>
+ 
+            <div class="p-2 text-center ms-3 position-relative dropdown-menu-icon menu-icon cursor-pointer">
+                <i class="feather-settings animation-spin d-inline-block font-xl text-current"></i>
+                <div class="dropdown-menu-settings switchcolor-wrap">
+                    <h4 class="fw-700 font-sm mb-4">Settings</h4>
+                    <h6 class="font-xssss text-grey-500 fw-700 mb-3 d-block">Choose Color Theme</h6>
+                    <ul>
+                        <li>
+                            <label class="item-radio item-content">
+                                <input type="radio" name="color-radio" value="red" checked=""><i class="ti-check"></i>
+                                <span class="circle-color bg-red" style="background-color: #ff3b30;"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="item-radio item-content">
+                                <input type="radio" name="color-radio" value="green"><i class="ti-check"></i>
+                                <span class="circle-color bg-green" style="background-color: #4cd964;"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="item-radio item-content">
+                                <input type="radio" name="color-radio" value="blue" checked=""><i class="ti-check"></i>
+                                <span class="circle-color bg-blue" style="background-color: #132977;"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="item-radio item-content">
+                                <input type="radio" name="color-radio" value="pink"><i class="ti-check"></i>
+                                <span class="circle-color bg-pink" style="background-color: #ff2d55;"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="item-radio item-content">
+                                <input type="radio" name="color-radio" value="yellow"><i class="ti-check"></i>
+                                <span class="circle-color bg-yellow" style="background-color: #ffcc00;"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="item-radio item-content">
+                                <input type="radio" name="color-radio" value="orange"><i class="ti-check"></i>
+                                <span class="circle-color bg-orange" style="background-color: #ff9500;"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="item-radio item-content">
+                                <input type="radio" name="color-radio" value="gray"><i class="ti-check"></i>
+                                <span class="circle-color bg-gray" style="background-color: #8e8e93;"></span>
+                            </label>
+                        </li>
+
+                        <li>
+                            <label class="item-radio item-content">
+                                <input type="radio" name="color-radio" value="brown"><i class="ti-check"></i>
+                                <span class="circle-color bg-brown" style="background-color: #D2691E;"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="item-radio item-content">
+                                <input type="radio" name="color-radio" value="darkgreen"><i class="ti-check"></i>
+                                <span class="circle-color bg-darkgreen" style="background-color: #228B22;"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="item-radio item-content">
+                                <input type="radio" name="color-radio" value="deeppink"><i class="ti-check"></i>
+                                <span class="circle-color bg-deeppink" style="background-color: #FFC0CB;"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="item-radio item-content">
+                                <input type="radio" name="color-radio" value="cadetblue"><i class="ti-check"></i>
+                                <span class="circle-color bg-cadetblue" style="background-color: #5f9ea0;"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="item-radio item-content">
+                                <input type="radio" name="color-radio" value="darkorchid"><i class="ti-check"></i>
+                                <span class="circle-color bg-darkorchid" style="background-color: #9932cc;"></span>
+                            </label>
+                        </li>
+                    </ul>
+                    
+                    <div class="card bg-transparent-card border-0 d-block mt-3">
+                        <h4 class="d-inline font-xssss mont-font fw-700">Header Background</h4>
+                        <div class="d-inline float-right mt-1">
+                            <label class="toggle toggle-menu-color"><input type="checkbox"><span class="toggle-icon"></span></label>
+                        </div>
+                    </div>
+                    <div class="card bg-transparent-card border-0 d-block mt-3">
+                        <h4 class="d-inline font-xssss mont-font fw-700">Menu Position</h4>
+                        <div class="d-inline float-right mt-1">
+                            <label class="toggle toggle-menu"><input type="checkbox"><span class="toggle-icon"></span></label>
+                        </div>
+                    </div>
+                    <div class="card bg-transparent-card border-0 d-block mt-3">
+                        <h4 class="d-inline font-xssss mont-font fw-700">Dark Mode</h4>
+                        <div class="d-inline float-right mt-1">
+                            <label class="toggle toggle-dark"><input type="checkbox"><span class="toggle-icon"></span></label>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+
+            <a href="default-settings.html" class="p-0 ms-3 menu-icon"><img src="images/profile-4.png" alt="user" class="w40 mt--1"></a>
+            
+        </div>
+        <!-- navigation top -->
+
+        <!-- navigation left -->
+        <nav class="navigation scroll-bar">
+            <div class="container ps-0 pe-0">
+                <div class="nav-content">
+                    <div class="nav-wrap bg-white bg-transparent-card rounded-xxl shadow-xss pt-3 pb-1 mb-2 mt-2">
+                        <div class="nav-caption fw-600 font-xssss text-grey-500"><span>New </span>Feeds</div>
+                        <ul class="mb-1 top-content">
+                            <li class="logo d-none d-xl-block d-lg-block"></li>
+                            <li><a href="{% url 'home' %}" class="nav-content-bttn open-font" ><i class="feather-tv btn-round-md bg-blue-gradiant me-3"></i><span>Home</span></a></li>
+                            <li><a href="{% url 'users' %}" class="nav-content-bttn open-font" ><i class="feather-award btn-round-md bg-red-gradiant me-3"></i><span>All Users</span></a></li>
+                            <li><a href="default-group.html" class="nav-content-bttn open-font" ><i class="feather-zap btn-round-md bg-mini-gradiant me-3"></i><span>Popular Groups</span></a></li>
+                            <li><a href="user-page.html" class="nav-content-bttn open-font"><i class="feather-user btn-round-md bg-primary-gradiant me-3"></i><span>Author Profile </span></a></li>                        
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- navigation left -->
+        <!-- main content -->
+        <div class="main-content right-chat-active">
+            
+            <div class="middle-sidebar-bottom">
+                <div class="middle-sidebar-left pe-0">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="card shadow-xss w-100 d-block d-flex border-0 p-4 mb-3">
+                                <div class="card-body d-flex align-items-center p-0">
+                                    <h2 class="fw-700 mb-0 mt-0 font-md text-grey-900">Friends</h2>
+                                    <div class="search-form-2 ms-auto">
+                                        <i class="ti-search font-xss"></i>
+                                        <input type="text" class="form-control text-grey-500 mb-0 bg-greylight theme-dark-bg border-0" placeholder="Search here.">
+                                    </div>
+                                    <a href="#" class="btn-round-md ms-2 bg-greylight theme-dark-bg rounded-3"><i class="feather-filter font-xss text-grey-500"></i></a>
+                                </div>
+                            </div>
+
+                            <div class="row ps-2 pe-2">
+                                <div class="row ps-2 pe-2">
+                                    {% for u in users %}
+                                        {% if author != u %}
+                                        <div class="col-md-3 col-sm-4 pe-2 ps-2">
+                                            <div class="card d-block border-0 shadow-xss rounded-3 overflow-hidden mb-3">
+                                                <div class="card-body d-block w-100 ps-3 pe-3 pb-4 text-center">
+                                                    <figure class="avatar ms-auto me-auto mb-0 position-relative w65 z-index-1"><img src="{{u.image.url}}" alt="image" class="float-right p-0 bg-white rounded-circle w-100 shadow-xss"></figure>
+                                                    <div class="clearfix"></div>
+                                                    <h4 class="fw-700 font-xsss mt-3 mb-1">{{u.first_name}} {{u.last_name}} </h4>
+                                                    <p class="fw-500 font-xsssss text-grey-500 mt-0 mb-3">@{{u.user.username}}</p>
+                                                          {% if request.user in u.followers.all %}
+                                                            <form action="/follow/" method="POST">{% csrf_token %}
+                                                                <button type="submit" name="follow" value="unfollow, {{u.user.username}}" class="ui inverted red button">Unfollow</button>
+                                                            </form>
+                                                          {% else %}
+                                                            <form action="/follow/" method="POST">{% csrf_token %}
+                                                                <button type="submit" name="follow" value="follow, {{u.user.username}}" class="ui blue button">Follow</button>
+                                                            </form>
+                                                          {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>  
+                                        {% endif %}
+                                    {% endfor %}
+
+                            </div>
+                        </div>               
+                    </div>
+                </div>
+                 
+            </div>            
+        </div>
+        <!-- main content -->
+
+        
+        <div class="app-footer border-0 shadow-lg bg-primary-gradiant">
+            <a href="default-settings.html" class="nav-content-bttn"><img src="images/female-profile.png" alt="user" class="w30 shadow-xss"></a>
+        </div>
+
+        <div class="app-header-search">
+            <form class="search-form">
+                <div class="form-group searchbox mb-0 border-0 p-1">
+                    <input type="text" class="form-control border-0" placeholder="Search...">
+                    <i class="input-icon">
+                        <ion-icon name="search-outline" role="img" class="md hydrated" aria-label="search outline"></ion-icon>
+                    </i>
+                    <a href="#" class="ms-1 mt-1 d-inline-block close searchbox-close">
+                        <i class="ti-close font-xs"></i>
+                    </a>
+                </div>
+            </form>
+        </div>
+
+    </div> 
+
+
+    <script src="{% static 'js/plugin.js' %}"></script>
+    <script src="{% static 'js/scripts.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+    
+</body>
+
+
+<!-- Mirrored from uitheme.net/sociala/default-member.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 15 Aug 2022 05:59:22 GMT -->
+</html>

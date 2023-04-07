@@ -1,8 +1,8 @@
-# from django.urls import path
+from django.urls import path
 
-# from .views import PostView
+from .views import *
 
 
-# # urlpatterns = [
-# #     # path("", PostView.as_view(), name="post")
-# # ]
+urlpatterns = [
+    path("message/", MessageView.as_view(), name="message")
+]
