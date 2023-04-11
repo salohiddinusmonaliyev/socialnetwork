@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sociala - Social Network App HTML Template </title>
+    <title>Network App HTML Template </title>
 
     <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}">
     <link rel="stylesheet" href="{% static 'css/feather.css' %}">
@@ -35,27 +35,22 @@
         <!-- navigation top-->
         <div class="nav-header bg-white shadow-xs border-0">
             <div class="nav-top">
-                <a href="index.html"><i class="feather-zap text-success display1-size me-2 ms-0"></i><span class="d-inline-block fredoka-font ls-3 fw-600 text-current font-xxl logo-text mb-0">Sociala. </span> </a>
-                <a href="#" class="mob-menu ms-auto me-2 chat-active-btn"><i class="feather-message-circle text-grey-900 font-sm btn-round-md bg-greylight"></i></a>
-                <a href="default-video.html" class="mob-menu me-2"><i class="feather-video text-grey-900 font-sm btn-round-md bg-greylight"></i></a>
-                <a href="#" class="me-2 menu-search-icon mob-menu"><i class="feather-search text-grey-900 font-sm btn-round-md bg-greylight"></i></a>
-                <button class="nav-menu me-0 ms-2"></button>
+                <a href="{% url 'home' %}" style="position: relative; right: 0;"><i class="feather-zap text-success display1-size me-2 ms-0"></i><span class="d-inline-block fredoka-font ls-3 fw-600 text-current font-xxl logo-text mb-0">Sociala. </span> </a>
+                <a href="#" class="me-2 menu-search-icon mob-menu" style="position: relative; left: 40px;"><i class="feather-search text-grey-900 font-sm btn-round-md bg-greylight"></i></a>
+                <button class="nav-menu me-0 ms-2" style="position: relative; left: 60px;"></button>
             </div>
-            
+
             <form action="#" class="float-left header-search">
                 <div class="form-group mb-0 icon-input">
                     <i class="feather-search font-sm text-grey-400"></i>
                     <input type="text" placeholder="Start typing to search.." class="bg-grey border-0 lh-32 pt-2 pb-2 ps-5 pe-3 font-xssss fw-500 rounded-xl w350 theme-dark-bg">
                 </div>
             </form>
-            <a href="default.html" class="p-2 text-center ms-3 menu-icon center-menu-icon"><i class="feather-home font-lg alert-primary btn-round-lg theme-dark-bg text-current "></i></a>
-            <a href="default-storie.html" class="p-2 text-center ms-0 menu-icon center-menu-icon"><i class="feather-zap font-lg bg-greylight btn-round-lg theme-dark-bg text-grey-500 "></i></a>
-            <a href="default-video.html" class="p-2 text-center ms-0 menu-icon center-menu-icon"><i class="feather-video font-lg bg-greylight btn-round-lg theme-dark-bg text-grey-500 "></i></a>
 
             <b href="#" class="p-2 text-center ms-auto menu-icon" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-bs-toggle="dropdown"></b>
 
-            
-            <a href="#" class="p-2 text-center ms-3 menu-icon chat-active-btn"><i class="feather-message-square font-xl text-current"></i></a>
+
+            <a href="#" class="p-2 text-center ms-3 menu-icon chat-active-btn"></a>
             <div class="p-2 text-center ms-3 position-relative dropdown-menu-icon menu-icon cursor-pointer">
                 <i class="feather-settings animation-spin d-inline-block font-xl text-current"></i>
                 <div class="dropdown-menu-settings switchcolor-wrap">
@@ -136,7 +131,7 @@
                             </label>
                         </li>
                     </ul>
-                    
+
                     <div class="card bg-transparent-card border-0 d-block mt-3">
                         <h4 class="d-inline font-xssss mont-font fw-700">Header Background</h4>
                         <div class="d-inline float-right mt-1">
@@ -155,32 +150,29 @@
                             <label class="toggle toggle-dark"><input type="checkbox"><span class="toggle-icon"></span></label>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
-            <a href="user/{{user.username}}" class="p-0 ms-3 menu-icon"><img src="{{user.image.url}}" alt="user" class="w40 mt--1"></a>
-            
+            <a href="user/{{user.username}}" class="p-0 ms-3 menu-icon"><img src="{{user.image.url}}" alt="user" class="w40 mt--1" style="border-radius: 50%;"></a>
+
         </div>
         <!-- navigation top -->
-
         <!-- navigation left -->
         <nav class="navigation scroll-bar">
             <div class="container ps-0 pe-0">
                 <div class="nav-content">
                     <div class="nav-wrap bg-white bg-transparent-card rounded-xxl shadow-xss pt-3 pb-1 mb-2 mt-2">
-                        <div class="nav-caption fw-600 font-xssss text-grey-500"><span>New </span>Feeds</div>
                         <ul class="mb-1 top-content">
                             <li class="logo d-none d-xl-block d-lg-block"></li>
-                            <li><a href="{% url 'home' %}" class="nav-content-bttn open-font" ><i class="feather-tv btn-round-md bg-blue-gradiant me-3"></i><span>Home</span></a></li>
-                            <li><a href="{% url 'users' %}" class="nav-content-bttn open-font" ><i class="feather-award btn-round-md bg-red-gradiant me-3"></i><span>All Users</span></a></li>
-                            <li><a href="default-group.html" class="nav-content-bttn open-font" ><i class="feather-zap btn-round-md bg-mini-gradiant me-3"></i><span>Popular Groups</span></a></li>
-                            <li><a href="user-page.html" class="nav-content-bttn open-font"><i class="feather-user btn-round-md bg-primary-gradiant me-3"></i><span>My Profile </span></a></li>                        
+
+                            <li><a href="{% url 'home' %}" class="nav-content-bttn open-font" ><i class="feather-home font-lg alert-primary btn-round-lg theme-dark-bg text-current"></i><span style="position: relative; left: 10px;"> Home</span></a></li>
+                            <li><a href="{% url 'users' %}" class="nav-content-bttn open-font" ><i class="fa fa-group font-lg bg-greylight btn-round-lg theme-dark-bg text-grey-500"></i><span style="position: relative; left: 10px;"> All Users</span></a></li>
+                            <li><a href="user-page.html" class="nav-content-bttn open-font"><i class="feather-user font-lg bg-greylight btn-round-lg theme-dark-bg text-grey-500"></i><span style="position: relative; left: 10px;">My Profile </span></a></li>
                         </ul>
 
                 </div>
             </div>
         </nav>
-        <!-- navigation left -->
         <!-- main content -->
         <div class="main-content right-chat-active">
             
@@ -188,10 +180,10 @@
                 <div class="middle-sidebar-left">
                     <div class="row feed-body">
                         <div class="col-xl-8 col-xxl-9 col-lg-8">
-                           
+
                             {% for i in post %}
-                            <div class="card w-100 shadow-xss rounded-xxl border-0 p-4 mb-3">
-                                <a href="/user/{{i.author.username}}">
+                            <div class="card w-100 shadow-xss rounded-xxl border-0 p-4 mb-3"  style="width: 1500%;">
+                                <a href="/user/{{i.author.id}}/">
                                     <div class="card-body p-0 d-flex" style="position: relative;">
                                         <img src="{{i.author.image.url}}" alt="Avatar" class="avatar">
                                         <h4 class="username11">{{i.author.user.username}}</h4>
@@ -245,8 +237,8 @@
 
                     </div>
                 </div>
-                
-            </div>            
+
+            </div>
         </div>
         <!-- main content -->
 
@@ -290,61 +282,6 @@
             </div>
         </div>
 
-        
-        <!-- right chat -->
-        
-        <div class="app-footer border-0 shadow-lg bg-primary-gradiant">
-            <a href="default.html" class="nav-content-bttn nav-center"><i class="feather-home"></i></a>
-            <a href="default-video.html" class="nav-content-bttn"><i class="feather-package"></i></a>
-            <a href="default-live-stream.html" class="nav-content-bttn" data-tab="chats"><i class="feather-layout"></i></a>            
-            <a href="shop-2.html" class="nav-content-bttn"><i class="feather-layers"></i></a>
-            <a href="default-settings.html" class="nav-content-bttn"><img src="images/female-profile.png" alt="user" class="w30 shadow-xss"></a>
-        </div>
-
-        <div class="app-header-search">
-            <form class="search-form">
-                <div class="form-group searchbox mb-0 border-0 p-1">
-                    <input type="text" class="form-control border-0" placeholder="Search...">
-                    <i class="input-icon">
-                        <ion-icon name="search-outline" role="img" class="md hydrated" aria-label="search outline"></ion-icon>
-                    </i>
-                    <a href="#" class="ms-1 mt-1 d-inline-block close searchbox-close">
-                        <i class="ti-close font-xs"></i>
-                    </a>
-                </div>
-            </form>
-        </div>
-
-    </div> 
-
-    <div class="modal bottom side fade" id="Modalstory" tabindex="-1" role="dialog" style=" overflow-y: auto;">
-         <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content border-0 bg-transparent">
-                <button type="button" class="close mt-0 position-absolute top--30 right--10" data-dismiss="modal" aria-label="Close"><i class="ti-close text-grey-900 font-xssss"></i></button>
-                <div class="modal-body p-0">
-                    <div class="card w-100 border-0 rounded-3 overflow-hidden bg-gradiant-bottom bg-gradiant-top">
-                        <div class="owl-carousel owl-theme dot-style3 story-slider owl-dot-nav nav-none">
-                            <div class="item"><img src="images/story-5.jpg" alt="image"></div>
-                            <div class="item"><img src="images/story-6.jpg" alt="image"></div>
-                            <div class="item"><img src="images/story-7.jpg" alt="image"></div>
-                            <div class="item"><img src="images/story-8.jpg" alt="image"></div>
-                            
-                        </div>
-                    </div>
-                    <div class="form-group mt-3 mb-0 p-3 position-absolute bottom-0 z-index-1 w-100">
-                        <input type="text" class="style2-input w-100 bg-transparent border-light-md p-3 pe-5 font-xssss fw-500 text-white" value="Write Comments">               
-                        <span class="feather-send text-white font-md text-white position-absolute" style="bottom: 35px;right:30px;"></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    
-
-   
-
-
     <script src="{% static 'js/plugin.js' %}"></script>
 
     <script src="{% static 'js/lightbox.js' %}"></script>
@@ -352,7 +289,14 @@
 
     
 </body>
+<style>
+    .fa-group:before, .fa-users:before {
+    content: "\f0c0";
+    position: relative;
+    top: 13px;
+}
+
+</style>
 
 
-<!-- Mirrored from uitheme.net/sociala/default.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 15 Aug 2022 05:40:27 GMT -->
 </html>

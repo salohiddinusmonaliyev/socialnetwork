@@ -8,12 +8,19 @@ from post.models import *
 # Create your views here.
 class HomeView(View):
     def get(self, request):
-        data = {
-            "post": Post.objects.all(),
-            "user": CustomUser.objects.get(user=request.user),
-            "all_user": CustomUser.objects.all(),
-        }
-        return render(request, "default.html", data)
+        if request.user.is_authenticated:
+            all_user = []
+            for u in CustomUser.objects.all():
+                if request.user in u.followers.all():
+                    all_user.append(u)
+            data = {
+                "post": Post.objects.all(),
+                "user": CustomUser.objects.get(user=request.user),
+                "all_user": all_user,
+            }
+            return render(request, "default.html", data)
+        else:
+            return redirect("/login/")
 
 class AddLikeView(View):
     def get(self, request, pk):
@@ -27,16 +34,6 @@ class AddLikeView(View):
             post.liked.add(user)
         return HttpResponseRedirect(reverse('home'))
 
-class LikeView(View):
-    def get(self, request, pk):
-        post_id = pk
-        post = Post.objects.get(id=post_id)
-        
-        if user in post.liked.all():
-            post.liked.remove(user)
-        else:
-            post.liked.add(user)
-        return HttpResponseRedirect(reverse('user'))
 
 
 class AddDislikeView(View):

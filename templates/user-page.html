@@ -15,6 +15,8 @@
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/lightbox.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'semantic/semantic.min.css' %}">
 
 </head>
 
@@ -88,13 +90,7 @@
                                 <div class="card-body p-0 position-relative">
                                     <img src="{{user.image.url}}" alt="Avatar" class="avatar1">
                                     <h3 class="username1">{{user.first_name}} {{user.last_name}} </h3>
-                                    <span class="email1">{{user.email}}</span>
                                     <style>
-                                        .email1 {
-                                            position: relative;
-                                            right: 220px;
-                                            top: 6px;
-                                        }
                                         .avatar1 {
                                             vertical-align: middle;
                                             width: 90px;
@@ -108,14 +104,26 @@
                                             display: inline;
                                             font-size: 22px;
                                             position: relative;
-                                            bottom: 15px;
+                                            bottom: 8px;
                                             left: 20px;
                                         }
                                     </style>
                                     <div class="d-flex align-items-center justify-content-center position-absolute-md right-15 top-0 me-2">
-                                        <a href="#" class="d-none d-lg-block bg-success p-3 z-index-1 rounded-3 text-white font-xsssss text-uppercase fw-700 ls-3">Add Friend</a>
-                                        <a href="#" class="d-none d-lg-block bg-greylight btn-round-lg ms-2 rounded-3 text-grey-700"><i class="feather-mail font-md"></i></a>
-                                        <a href="#" id="dropdownMenu4" class="d-none d-lg-block bg-greylight btn-round-lg ms-2 rounded-3 text-grey-700" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-more font-md tetx-dark"></i></a>
+                                        {% if request.user.id != user.user.id %}
+                                        {% if request.user in user.followers.all %}
+                                        <form action="/follow/" method="POST">{% csrf_token %}
+                                            <button type="submit" name="follow" value="unfollow, {{user.user.username}}" class="ui inverted red button">Unfollow</button>
+                                        </form>
+                                          {% else %}
+                                            <form action="/follow/" method="POST">{% csrf_token %}
+                                                <button type="submit" name="follow" value="follow, {{user.user.username}}" class="ui blue button">Follow</button>
+                                            </form>
+                                          {% endif %}
+                                        {% else %}
+                                        <form action="/follow/" method="POST">{% csrf_token %}
+                                            <button type="submit" name="follow" value="unfollow, {{user.user.username}}" class="ui inverted blue button">Edit Profile</button>
+                                        </form>
+                                        {% endif %}
                                     </div>
                                 </div>
 
@@ -157,7 +165,7 @@
                                             }
                                         </style>
                                     </div>
-                                    <a href="#" class="ms-auto" id="dropdownMenu7" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-more-alt text-grey-900 btn-round-md bg-greylight font-xss"></i></a>
+                                    <a href="#" class="ms-auto" id="dropdownMenu7" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
                                 </div>
                                 <div class="card-body d-block p-0" style="width: 305%;">
                                     <div class="row ps-2 pe-2">
@@ -165,7 +173,7 @@
                                     </div>
                                 </div>
                                 <div class="card-body p-0 me-lg-5">
-                                    <p class="fw-500 text-grey-500 lh-26 font-xssss w-100">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nulla dolor, ornare at commodo non, feugiat non nisi. Phasellus faucibus mollis pharetra. Proin blandit ac massa sed rhoncus <a href="#" class="fw-600 text-primary ms-2">See more</a></p>
+                                    <p class="fw-500 text-grey-500 lh-26 font-xssss w-100">{{p.text}}</p>
                                 </div>
                                 
                             </div>

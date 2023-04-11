@@ -15,6 +15,8 @@
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'semantic/semantic.min.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
 </head>
 
@@ -27,15 +29,23 @@
 
         <!-- navigation top-->
         <div class="nav-header bg-white shadow-xs border-0">
-            
+            <div class="nav-top">
+                <a href="{% url 'home' %}" style="position: relative; right: 70px;"><i class="feather-zap text-success display1-size me-2 ms-0"></i><span class="d-inline-block fredoka-font ls-3 fw-600 text-current font-xxl logo-text mb-0">Sociala. </span> </a>
+                <a href="#" class="me-2 menu-search-icon mob-menu" style="position: relative; left: 40px;"><i class="feather-search text-grey-900 font-sm btn-round-md bg-greylight"></i></a>
+                <button class="nav-menu me-0 ms-2" style="position: relative; left: 60px;"></button>
+            </div>
+
             <form action="#" class="float-left header-search">
                 <div class="form-group mb-0 icon-input">
                     <i class="feather-search font-sm text-grey-400"></i>
                     <input type="text" placeholder="Start typing to search.." class="bg-grey border-0 lh-32 pt-2 pb-2 ps-5 pe-3 font-xssss fw-500 rounded-xl w350 theme-dark-bg">
                 </div>
             </form>
-            <a href="#" class="p-2 text-center ms-auto menu-icon" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-bs-toggle="dropdown"></a>
- 
+
+            <b href="#" class="p-2 text-center ms-auto menu-icon" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-bs-toggle="dropdown"></b>
+
+
+            <a href="#" class="p-2 text-center ms-3 menu-icon chat-active-btn"><i class="feather-message-square font-xl text-current"></i></a>
             <div class="p-2 text-center ms-3 position-relative dropdown-menu-icon menu-icon cursor-pointer">
                 <i class="feather-settings animation-spin d-inline-block font-xl text-current"></i>
                 <div class="dropdown-menu-settings switchcolor-wrap">
@@ -116,7 +126,7 @@
                             </label>
                         </li>
                     </ul>
-                    
+
                     <div class="card bg-transparent-card border-0 d-block mt-3">
                         <h4 class="d-inline font-xssss mont-font fw-700">Header Background</h4>
                         <div class="d-inline float-right mt-1">
@@ -135,30 +145,26 @@
                             <label class="toggle toggle-dark"><input type="checkbox"><span class="toggle-icon"></span></label>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
-            
-
-            <a href="default-settings.html" class="p-0 ms-3 menu-icon"><img src="images/profile-4.png" alt="user" class="w40 mt--1"></a>
+            <a href="user/{{user.username}}" class="p-0 ms-3 menu-icon"><img src="{{user.image.url}}" alt="user" class="w40 mt--1"></a>
             
         </div>
         <!-- navigation top -->
-
         <!-- navigation left -->
         <nav class="navigation scroll-bar">
             <div class="container ps-0 pe-0">
                 <div class="nav-content">
                     <div class="nav-wrap bg-white bg-transparent-card rounded-xxl shadow-xss pt-3 pb-1 mb-2 mt-2">
-                        <div class="nav-caption fw-600 font-xssss text-grey-500"><span>New </span>Feeds</div>
                         <ul class="mb-1 top-content">
                             <li class="logo d-none d-xl-block d-lg-block"></li>
-                            <li><a href="{% url 'home' %}" class="nav-content-bttn open-font" ><i class="feather-tv btn-round-md bg-blue-gradiant me-3"></i><span>Home</span></a></li>
-                            <li><a href="{% url 'users' %}" class="nav-content-bttn open-font" ><i class="feather-award btn-round-md bg-red-gradiant me-3"></i><span>All Users</span></a></li>
-                            <li><a href="default-group.html" class="nav-content-bttn open-font" ><i class="feather-zap btn-round-md bg-mini-gradiant me-3"></i><span>Popular Groups</span></a></li>
-                            <li><a href="user-page.html" class="nav-content-bttn open-font"><i class="feather-user btn-round-md bg-primary-gradiant me-3"></i><span>Author Profile </span></a></li>                        
+
+                            <li><a href="{% url 'home' %}" class="nav-content-bttn open-font" ><i class="feather-home font-lg bg-greylight btn-round-lg theme-dark-bg text-grey-500"></i><span style="position: relative; left: 10px;"> Home</span></a></li>
+                            <li><a href="{% url 'users' %}" class="nav-content-bttn open-font" ><i class="fa fa-group  font-lg alert-primary btn-round-lg theme-dark-bg text-current"></i><span style="position: relative; left: 10px;"> All Users</span></a></li>
+                            <li><a href="user-page.html" class="nav-content-bttn open-font"><i class="feather-user font-lg bg-greylight btn-round-lg theme-dark-bg text-grey-500"></i><span style="position: relative; left: 10px;">My Profile </span></a></li>
                         </ul>
-                    </div>
+
                 </div>
             </div>
         </nav>
@@ -244,7 +250,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
     
 </body>
+<style>
+    .fa-group:before, .fa-users:before {
+    content: "\f0c0";
+    position: relative;
+    top: 13px;
+}
 
+</style>
 
 <!-- Mirrored from uitheme.net/sociala/default-member.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 15 Aug 2022 05:59:22 GMT -->
 </html>

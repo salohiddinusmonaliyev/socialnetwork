@@ -83,5 +83,11 @@
   .liked:hover span {
     color: #fefefe;
   }
+
+
+.fa-group:before {
+    position: relative;
+    top: 13px;
+}
   
   

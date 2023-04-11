@@ -11,9 +11,10 @@ from django.contrib.auth.models import User
 
 # Create your views here.
 def user(request, a):
-    user = CustomUser.objects.get(username=a).id
+    user = CustomUser.objects.get(id=a)
+    print(user)
     data = {
-        "user": CustomUser.objects.get(username=a),
+        "user": CustomUser.objects.get(id=a),
         "posts": Post.objects.filter(author_id=user),
     }
     return render(request, "user-page.html", data)
@@ -56,9 +57,9 @@ def follow(request):
             if user.id != request.user.id:
                 user.followers.remove(request.user)
 
-        return redirect('users')
+        return redirect(request.META.get('HTTP_REFERER', '/'))
     
-    
+
 
 
 def login_user(request):
@@ -93,4 +94,5 @@ def signup(request):
         return redirect("/login/")
     else:
         return render(request, 'register.html')
+
 
