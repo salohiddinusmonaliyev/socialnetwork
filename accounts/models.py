@@ -10,6 +10,8 @@ class CustomUser(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     email = models.EmailField(max_length=254, unique=True)
+    about = models.TextField(null=True)
+    country = models.CharField(max_length=200, null=True)
     image = models.FileField(upload_to="profile", null=True)
     followers = models.ManyToManyField(User, related_name="followers", null=True, blank=True)
 
